@@ -19,6 +19,18 @@
     background: #e8e8e8;
 }
 
+@media (min-width: 768px) {
+    .thumb {
+        height: 300px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .thumb {
+        height: 400px;
+    }
+}
+
 .lightbox {
     padding: 0;
     border: none;

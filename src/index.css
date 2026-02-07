@@ -55,6 +55,12 @@ main {
     padding: 2rem 1rem;
 }
 
+@media (min-width: 1200px) {
+    .section {
+        max-width: 1400px;
+    }
+}
+
 img {
     max-width: 100%;
 }
