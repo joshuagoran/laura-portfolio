@@ -1,26 +1,55 @@
 .hero {
-    text-align: center;
-    padding: 4rem 1rem;
+    position: relative;
+    height: 85vh;
+    min-height: 500px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
 }
 
-.hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+.overlay {
+    padding: 3rem 2rem;
+    color: #fff;
+    max-width: 700px;
+    animation: fadeInUp 0.8s ease both;
+    animation-delay: 0.3s;
 }
 
-.hero p {
-    max-width: 600px;
-    margin: 0 auto 1.5rem;
-    color: #555;
+.overlay h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    margin-bottom: 0.75rem;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.overlay p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 500px;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
 }
 
 .cta {
     display: inline-block;
-    padding: 0.6rem 1.5rem;
-    border: 1px solid #2c2c2c;
+    padding: 0.75rem 2rem;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
 }
 
 .cta:hover {
-    background: #2c2c2c;
-    color: #fff;
+    background: #fff;
+    color: #2c2c2c;
+}
+
+@media (min-width: 768px) {
+    .overlay {
+        padding: 4rem 3rem;
+    }
 }

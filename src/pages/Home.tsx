@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
+import FeaturedProject from "../components/FeaturedProject";
 import Hero from "../components/Hero";
-import ProjectGrid from "../components/ProjectGrid";
 import { getProjects, type Project } from "../data/projects";
 
 export default function Home() {
@@ -13,9 +13,21 @@ export default function Home() {
     return (
         <>
             <Hero />
-            <section className="section">
-                <h2>Featured Work</h2>
-                <ProjectGrid projects={featured} />
+            <section
+                className="section"
+                style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "6rem",
+                }}
+            >
+                {featured.map((project, i) => (
+                    <FeaturedProject
+                        key={project.slug}
+                        project={project}
+                        index={i}
+                    />
+                ))}
             </section>
         </>
     );

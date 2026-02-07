@@ -7,6 +7,7 @@ export default function Hero() {
     const [content, setContent] = useState<{
         headline: string;
         subheadline: string;
+        backgroundImage: string;
     } | null>(null);
 
     useEffect(() => {
@@ -16,12 +17,17 @@ export default function Hero() {
     if (!content) return null;
 
     return (
-        <section className={styles.hero}>
-            <h1>{content.headline}</h1>
-            <p>{content.subheadline}</p>
-            <Link to="/projects" className={styles.cta}>
-                View Projects
-            </Link>
+        <section
+            className={styles.hero}
+            style={{ backgroundImage: `url(${content.backgroundImage})` }}
+        >
+            <div className={styles.overlay}>
+                <h1>{content.headline}</h1>
+                <p>{content.subheadline}</p>
+                <Link to="/projects" className={styles.cta}>
+                    View Projects
+                </Link>
+            </div>
         </section>
     );
 }

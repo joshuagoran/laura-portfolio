@@ -3,9 +3,11 @@ const content = {
         headline: "Landscapes That Live",
         subheadline:
             "Thoughtful landscape design rooted in place, ecology, and how people actually use their outdoor spaces.",
+        backgroundImage: "/images/hero.jpg",
     },
     about: {
         title: "About",
+        image: "/images/about.jpg",
         bio: "Laura is a landscape designer based in the Pacific Northwest with over a decade of experience creating spaces that balance beauty, function, and ecological responsibility. Her work spans residential gardens, commercial campuses, and public parks.",
         philosophy:
             "Good landscape design starts with listening — to the land, the climate, and the people who will inhabit the space. Every project is an opportunity to strengthen the relationship between built and natural environments.",
