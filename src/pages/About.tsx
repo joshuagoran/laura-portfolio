@@ -7,7 +7,6 @@ export default function About() {
         title: string;
         image: string;
         bio: string;
-        philosophy: string;
     } | null>(null);
 
     useEffect(() => {
@@ -18,16 +17,18 @@ export default function About() {
 
     return (
         <article className={styles.page}>
-            <img
+            {/* <img
                 src={content.image}
                 alt={content.title}
                 className={styles.heroImage}
-            />
+            /> */}
             <div className={styles.content}>
                 <h1 className={styles.title}>{content.title}</h1>
-                <p className={styles.bio}>{content.bio}</p>
-                <h2 className={styles.subheading}>Design Philosophy</h2>
-                <p className={styles.philosophy}>{content.philosophy}</p>
+                {content.bio.split("\n\n").map((paragraph) => (
+                    <p key={paragraph.slice(0, 20)} className={styles.bio}>
+                        {paragraph}
+                    </p>
+                ))}
             </div>
         </article>
     );

@@ -8,9 +8,7 @@ const content = {
     about: {
         title: "About",
         image: "/images/about.jpg",
-        bio: "Laura is a landscape designer based in the Pacific Northwest with over a decade of experience creating spaces that balance beauty, function, and ecological responsibility. Her work spans residential gardens, commercial campuses, and public parks.",
-        philosophy:
-            "Good landscape design starts with listening — to the land, the climate, and the people who will inhabit the space. Every project is an opportunity to strengthen the relationship between built and natural environments.",
+        bio: "Laura Noel is a landscape designer whose work bridges landscape architecture, garden design, and urban planning. Raised in the post-industrial city of Akron, Ohio, her practice explores how landscape design can help restore ecosystems and cultural memory.\n\nLaura combines her background in ecological planting design and urban policy to advocate for adaptive reuse and sustainable development.\n\nShe holds a Bachelor's in Urban Planning and a Master's in Landscape Architecture from the University of Cincinnati, along with a Planting Design Diploma from the London College of Garden Design. Her training in herbalism and botany at the Northeast School of Botanical Medicine also continues to shape her approach to design.",
     },
     contact: {
         heading: "Get In Touch",
