@@ -5,7 +5,7 @@ export default function Hero() {
     return (
         <section
             className={styles.hero}
-            style={{ backgroundImage: "url(/images/hero.jpg)" }}
+            style={{ backgroundImage: "url(/images/hero.webp)" }}
         >
             <div className={styles.overlay}>
                 <h1>Landscapes That Live</h1>

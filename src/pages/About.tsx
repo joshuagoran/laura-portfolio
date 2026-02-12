@@ -4,7 +4,7 @@ export default function About() {
     return (
         <article className={styles.page}>
             <img
-                src="/images/about-hero.jpg"
+                src="/images/about-hero.webp"
                 alt="Laura Noel in a garden setting"
                 className={styles.heroImage}
             />
