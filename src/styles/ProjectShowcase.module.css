@@ -6,7 +6,8 @@
     .showcase {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        height: 100vh;
+        height: calc(100dvh - var(--navbar-height));
+        overflow: hidden;
     }
 }
 
@@ -16,23 +17,24 @@
 
 @media (min-width: 768px) {
     .imageColumn {
-        position: sticky;
-        top: 0;
-        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
 .image {
     width: 100%;
-    display: block;
+    max-height: 50vh;
     object-fit: cover;
-    aspect-ratio: 3 / 2;
+    display: block;
 }
 
 @media (min-width: 768px) {
     .image {
-        height: 100%;
-        aspect-ratio: unset;
+        max-height: calc(100dvh - var(--navbar-height));
+        width: 100%;
+        object-fit: contain;
     }
 }
 
@@ -80,22 +82,4 @@
     line-height: 1.7;
     color: #444;
     margin-bottom: 3rem;
-}
-
-.sectionHeading {
-    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
-    font-size: 0.8rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #888;
-    margin-bottom: 0.75rem;
-}
-
-.sectionText {
-    max-width: 600px;
-    font-size: 1rem;
-    line-height: 1.7;
-    color: #555;
-    margin-bottom: 2.5rem;
 }
