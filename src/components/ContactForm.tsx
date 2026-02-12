@@ -2,7 +2,12 @@ import { useState } from "react";
 import styles from "../styles/ContactForm.module.css";
 
 export default function ContactForm() {
-    const [form, setForm] = useState({ name: "", email: "", message: "" });
+    const [form, setForm] = useState({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+    });
     const [submitted, setSubmitted] = useState(false);
 
     function handleChange(
@@ -44,6 +49,14 @@ export default function ContactForm() {
                     value={form.email}
                     onChange={handleChange}
                     required
+                />
+            </label>
+            <label>
+                Subject
+                <input
+                    name="subject"
+                    value={form.subject}
+                    onChange={handleChange}
                 />
             </label>
             <label>

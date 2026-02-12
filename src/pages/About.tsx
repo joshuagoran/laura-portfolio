@@ -3,11 +3,11 @@ import styles from "../styles/About.module.css";
 export default function About() {
     return (
         <article className={styles.page}>
-            {/* <img
-                src="/images/about.jpg"
-                alt="About"
+            <img
+                src="/images/about-hero.jpg"
+                alt="Laura Noel in a garden setting"
                 className={styles.heroImage}
-            /> */}
+            />
             <div className={styles.content}>
                 <h1 className={styles.title}>About</h1>
                 <p className={styles.bio}>
@@ -26,8 +26,8 @@ export default function About() {
                     She holds a Bachelor's in Urban Planning and a Master's in
                     Landscape Architecture from the University of Cincinnati,
                     along with a Planting Design Diploma from the London College
-                    of Garden Design. Her training in herbalism and botany at the
-                    Northeast School of Botanical Medicine also continues to
+                    of Garden Design. Her training in herbalism and botany at
+                    the Northeast School of Botanical Medicine also continues to
                     shape her approach to design.
                 </p>
             </div>

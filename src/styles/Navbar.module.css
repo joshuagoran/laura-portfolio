@@ -16,11 +16,14 @@
 
 .links {
     display: flex;
+    align-items: center;
     list-style: none;
     gap: 1.5rem;
 }
 
 .links a {
+    display: flex;
+    align-items: center;
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -32,13 +35,20 @@
 }
 
 /* Mobile */
-@media (max-width: 639px) {
+@media (max-width: 800px) {
     .nav {
         flex-direction: column;
         padding: 0.65rem 1rem;
+        height: auto;
     }
 
     .logo {
         font-size: 1.8rem;
+    }
+
+    .links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem 1rem;
     }
 }

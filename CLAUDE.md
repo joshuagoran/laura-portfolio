@@ -21,11 +21,14 @@ React 19 SPA built with Vite 7 and TypeScript, using React Router DOM v7 for cli
 - `/projects` → All projects with category filtering
 - `/projects/:slug` → Project detail (slug-based lookup)
 - `/about` → About page
+- `/services` → Service tiers (Mini Garden Vision, Signature Planting Plan, Site Planning)
+- `/sketches` → Sketch gallery (uses `ImageGallery` component)
 - `/contact` → Contact form
 
 **Data layer**: No API or database. All content is static and inline.
 - `projects.ts` — `Project` type + synchronous `projects` array and `categories` export
-- Hero, About, Contact, Footer content is hardcoded directly in their components
+- Hero, About, Contact, Services, Footer content is hardcoded directly in their components
+- Sketch images stored in `public/images/sketches/`; `ImageGallery` component provides thumbnail grid + lightbox
 
 No global state management. Components use local `useState` only where needed (e.g., category filtering).
 
