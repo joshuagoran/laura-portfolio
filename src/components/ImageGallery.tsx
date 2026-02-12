@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "../styles/ImageGallery.module.css";
+import LazyImage from "./LazyImage";
 
 type ImageGalleryProps = {
     images: string[];
@@ -18,7 +19,7 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
                         className={styles.thumbButton}
                         onClick={() => setSelected(i)}
                     >
-                        <img
+                        <LazyImage
                             src={src}
                             alt={`Project ${i + 1}`}
                             className={styles.thumb}

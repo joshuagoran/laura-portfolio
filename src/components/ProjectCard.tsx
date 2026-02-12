@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import type { Project } from "../data/projects";
 import styles from "../styles/ProjectCard.module.css";
+import LazyImage from "./LazyImage";
 
 type ProjectCardProps = {
     project: Project;
@@ -10,7 +11,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     return (
         <Link to={`/projects/${project.slug}`} className={styles.card}>
             <div className={styles.imageWrap}>
-                <img
+                <LazyImage
                     src={project.images[0]}
                     alt={project.title}
                     className={styles.image}

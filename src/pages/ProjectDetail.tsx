@@ -1,4 +1,5 @@
 import { Link, useParams, useSearchParams } from "react-router-dom";
+import LazyImage from "../components/LazyImage";
 import ProjectShowcase from "../components/ProjectShowcase";
 import { projects } from "../data/projects";
 import styles from "../styles/ProjectDetail.module.css";
@@ -19,7 +20,7 @@ export default function ProjectDetail() {
 
     return (
         <article>
-            <img
+            <LazyImage
                 src={heroImage}
                 alt={project.title}
                 className={styles.heroImage}
@@ -36,7 +37,7 @@ export default function ProjectDetail() {
                 {restImages.length > 0 && (
                     <div className={styles.images}>
                         {restImages.map((src, i) => (
-                            <img
+                            <LazyImage
                                 key={src}
                                 src={src}
                                 alt={`${project.title} ${i + 2}`}

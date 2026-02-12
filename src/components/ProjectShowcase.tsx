@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import type { Project } from "../data/projects";
 import styles from "../styles/ProjectShowcase.module.css";
+import LazyImage from "./LazyImage";
 
 type ProjectShowcaseProps = {
     project: Project;
@@ -10,7 +11,7 @@ export default function ProjectShowcase({ project }: ProjectShowcaseProps) {
     return (
         <article className={styles.showcase}>
             <div className={styles.imageColumn}>
-                <img
+                <LazyImage
                     src={project.images[0]}
                     alt={project.title}
                     className={styles.image}

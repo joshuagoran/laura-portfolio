@@ -1,9 +1,10 @@
+import LazyImage from "../components/LazyImage";
 import styles from "../styles/About.module.css";
 
 export default function About() {
     return (
         <article className={styles.page}>
-            <img
+            <LazyImage
                 src="/images/about-hero.webp"
                 alt="Laura Noel in a garden setting"
                 className={styles.heroImage}

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import type { Project } from "../data/projects";
 import styles from "../styles/FeaturedProject.module.css";
+import LazyImage from "./LazyImage";
 
 type FeaturedProjectProps = {
     project: Project;
@@ -18,7 +19,7 @@ export default function FeaturedProject({
             style={{ animationDelay: `${index * 0.15}s` }}
         >
             <div className={styles.imageWrap}>
-                <img
+                <LazyImage
                     src={project.images[0]}
                     alt={project.title}
                     className={styles.image}
