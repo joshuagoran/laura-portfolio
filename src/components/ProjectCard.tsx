@@ -17,7 +17,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 />
             </div>
             <div className={styles.info}>
-                <span className={styles.category}>{project.category}</span>
                 <h3>{project.title}</h3>
                 <p>{project.summary}</p>
             </div>

@@ -30,8 +30,7 @@ export default function ProjectDetail() {
                 </Link>
                 <h1 className={styles.title}>{project.title}</h1>
                 <p className={styles.meta}>
-                    {project.category} &middot; {project.location} &middot;{" "}
-                    {project.year}
+                    {project.location} &middot; {project.year}
                 </p>
                 <p className={styles.description}>{project.description}</p>
                 {restImages.length > 0 && (

@@ -22,8 +22,7 @@ export default function ProjectShowcase({ project }: ProjectShowcaseProps) {
                 </Link>
                 <h1 className={styles.title}>{project.title}</h1>
                 <p className={styles.meta}>
-                    {project.category} &middot; {project.location} &middot;{" "}
-                    {project.year}
+                    {project.location} &middot; {project.year}
                 </p>
                 <p className={styles.description}>{project.description}</p>
 

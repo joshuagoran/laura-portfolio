@@ -25,7 +25,6 @@ export default function FeaturedProject({
                 />
             </div>
             <div className={styles.caption}>
-                <span className={styles.category}>{project.category}</span>
                 <h3>{project.title}</h3>
                 <p>{project.summary}</p>
             </div>
