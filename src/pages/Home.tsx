@@ -1,15 +1,10 @@
-import { useEffect, useState } from "react";
 import FeaturedProject from "../components/FeaturedProject";
 import Hero from "../components/Hero";
-import { getProjects, type Project } from "../data/projects";
+import { projects } from "../data/projects";
+
+const featured = projects.slice(0, 3);
 
 export default function Home() {
-    const [featured, setFeatured] = useState<Project[]>([]);
-
-    useEffect(() => {
-        getProjects().then((projects) => setFeatured(projects.slice(0, 3)));
-    }, []);
-
     return (
         <>
             <Hero />

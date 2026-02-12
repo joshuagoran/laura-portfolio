@@ -23,11 +23,11 @@ React 19 SPA built with Vite 7 and TypeScript, using React Router DOM v7 for cli
 - `/about` → About page
 - `/contact` → Contact form
 
-**Data layer**: No API or database. All content lives in `src/data/`:
-- `projects.ts` — `Project` type + array of project objects with async getter functions (`getProjects`, `getProjectBySlug`, `getCategories`)
-- `content.ts` — Centralized strings for hero, about, contact, footer sections (`getContent`, `getAllContent`)
+**Data layer**: No API or database. All content is static and inline.
+- `projects.ts` — `Project` type + synchronous `projects` array and `categories` export
+- Hero, About, Contact, Footer content is hardcoded directly in their components
 
-Pages fetch data via async functions in `useEffect`. There is no global state management — just local `useState`.
+No global state management. Components use local `useState` only where needed (e.g., category filtering).
 
 **Styling**: CSS Modules (one `.module.css` per component in `src/styles/`). Global styles in `src/index.css`. No CSS frameworks. Color palette centers on `#2c2c2c` dark with gray accents.
 

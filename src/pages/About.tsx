@@ -1,34 +1,35 @@
-import { useEffect, useState } from "react";
-import { getContent } from "../data/content";
 import styles from "../styles/About.module.css";
 
 export default function About() {
-    const [content, setContent] = useState<{
-        title: string;
-        image: string;
-        bio: string;
-    } | null>(null);
-
-    useEffect(() => {
-        getContent("about").then(setContent);
-    }, []);
-
-    if (!content) return null;
-
     return (
         <article className={styles.page}>
             {/* <img
-                src={content.image}
-                alt={content.title}
+                src="/images/about.jpg"
+                alt="About"
                 className={styles.heroImage}
             /> */}
             <div className={styles.content}>
-                <h1 className={styles.title}>{content.title}</h1>
-                {content.bio.split("\n\n").map((paragraph) => (
-                    <p key={paragraph.slice(0, 20)} className={styles.bio}>
-                        {paragraph}
-                    </p>
-                ))}
+                <h1 className={styles.title}>About</h1>
+                <p className={styles.bio}>
+                    Laura Noel is a landscape designer whose work bridges
+                    landscape architecture, garden design, and urban planning.
+                    Raised in the post-industrial city of Akron, Ohio, her
+                    practice explores how landscape design can help restore
+                    ecosystems and cultural memory.
+                </p>
+                <p className={styles.bio}>
+                    Laura combines her background in ecological planting design
+                    and urban policy to advocate for adaptive reuse and
+                    sustainable development.
+                </p>
+                <p className={styles.bio}>
+                    She holds a Bachelor's in Urban Planning and a Master's in
+                    Landscape Architecture from the University of Cincinnati,
+                    along with a Planting Design Diploma from the London College
+                    of Garden Design. Her training in herbalism and botany at the
+                    Northeast School of Botanical Medicine also continues to
+                    shape her approach to design.
+                </p>
             </div>
         </article>
     );

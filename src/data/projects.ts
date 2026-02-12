@@ -9,7 +9,7 @@ export type Project = {
     location: string;
 };
 
-const projects: Project[] = [
+export const projects: Project[] = [
     {
         slug: "thornwood-garden",
         title: "Thornwood Garden Revival",
@@ -102,14 +102,4 @@ const projects: Project[] = [
     },
 ];
 
-export async function getProjects(): Promise<Project[]> {
-    return projects;
-}
-
-export async function getProjectBySlug(slug: string): Promise<Project | null> {
-    return projects.find((p) => p.slug === slug) || null;
-}
-
-export async function getCategories(): Promise<string[]> {
-    return [...new Set(projects.map((p) => p.category))];
-}
+export const categories = [...new Set(projects.map((p) => p.category))];

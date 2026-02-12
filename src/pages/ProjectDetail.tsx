@@ -1,21 +1,15 @@
-import { useEffect, useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import ProjectShowcase from "../components/ProjectShowcase";
-import { getProjectBySlug, type Project } from "../data/projects";
+import { projects } from "../data/projects";
 import styles from "../styles/ProjectDetail.module.css";
 
 export default function ProjectDetail() {
     const { slug } = useParams<{ slug: string }>();
     const [searchParams] = useSearchParams();
-    const [project, setProject] = useState<Project | null>(null);
 
-    useEffect(() => {
-        if (slug) {
-            getProjectBySlug(slug).then(setProject);
-        }
-    }, [slug]);
+    const project = projects.find((p) => p.slug === slug);
 
-    if (!project) return <p className="section">Loading...</p>;
+    if (!project) return <p className="section">Project not found.</p>;
 
     if (searchParams.get("view") === "split") {
         return <ProjectShowcase project={project} />;
