@@ -14,27 +14,35 @@ No test framework is configured.
 
 ## Architecture
 
-React 19 SPA built with Vite 7 and TypeScript, using React Router DOM v7 for client-side routing. All source is TSX/TS.
+React 19 SPA built with Vite 7 and TypeScript, using React Router DOM v7 for client-side routing. Pre-rendered to static HTML via `vite-prerender-plugin`. All source is TSX/TS.
 
 **Routing** (defined in `App.tsx`):
-- `/` → Home (featured projects)
+- `/` → Home (eagerly loaded — not lazy — to avoid hydration flash with pre-rendered hero)
 - `/projects` → All projects with category filtering
 - `/projects/:slug` → Project detail (slug-based lookup)
 - `/about` → About page
 - `/services` → Service tiers (Mini Garden Vision, Signature Planting Plan, Site Planning)
-- `/sketches` → Sketch gallery (uses `ImageGallery` component)
+- `/sketches` → Sketch gallery (uses `ImageGallery` component with CSS columns masonry + lightbox)
 - `/contact` → Contact form
 
+All pages except Home are lazy-loaded via `React.lazy` + `Suspense`.
+
 **Data layer**: No API or database. All content is static and inline.
-- `projects.ts` — `Project` type + synchronous `projects` array and `categories` export
-- Hero, About, Contact, Services, Footer content is hardcoded directly in their components
+- `projects.ts` — `Project` type + synchronous `projects` array and `categories` export. The `Project` type has JSDoc comments on each field describing where it's used — **keep those comments up to date when changing how fields are consumed in components.** Image paths use a template literal type (`` `/images/projects/${string}`[] ``) for path enforcement.
+- Hero, About, Contact, Services content is hardcoded directly in their components
 - Sketch images stored in `public/images/sketches/`; `ImageGallery` component provides thumbnail grid + lightbox
 
 No global state management. Components use local `useState` only where needed (e.g., category filtering).
 
-**Styling**: CSS Modules (one `.module.css` per component in `src/styles/`). Global styles in `src/index.css`. No CSS frameworks. Color palette centers on `#2c2c2c` dark with gray accents.
+**Key shared components**:
+- `Reveal` — Scroll-triggered fade-in using `useInView` hook (IntersectionObserver). Respects `prefers-reduced-motion`.
+- `ScrollToTop` — Scrolls to top on route change
+- `TransitionLink` — View Transitions API wrapper for page navigation (progressive enhancement)
+- `useInView` hook (`src/hooks/useInView.ts`) — IntersectionObserver wrapper for scroll reveals
 
-**Layout**: `App.tsx` renders `Navbar` + `<main>` with `<Routes>` + `Footer`. Pages use the `.section` class from `index.css` for consistent max-width container.
+**Styling**: CSS Modules (one `.module.css` per component in `src/styles/`). Design tokens (colors, typography, spacing, easing, `--max-width`) defined as CSS custom properties in `:root` in `src/index.css`. No CSS frameworks. `prefers-reduced-motion` kill switch uses `:root body *` specificity to disable all animations.
+
+**Layout**: `App.tsx` renders `Navbar` + `<main>` with `<Routes>`. No footer currently (deferred — see `Ideas/site-redesign-proposal.md`). Pages use `var(--max-width)` for consistent max-width container.
 
 ## Conventions
 
