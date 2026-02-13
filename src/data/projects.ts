@@ -43,7 +43,7 @@ export const projects: Project[] = [
             "This half-acre residential property had been left untended for years. We redesigned the space around a central bluestone patio, introducing native plantings in layered beds, a recirculating stone fountain, and meandering gravel paths that connect seating areas throughout the garden.",
         images: [
             "/images/projects/Brave Earth Retreat Center.webp",
-            "/images/projects/thornwood-2.jpg",
+            "/images/projects/thornwood-2.webp",
         ],
         year: 2024,
         location: "Costa Rica",
@@ -62,7 +62,7 @@ export const projects: Project[] = [
             "Meridian's aging entry landscape was replaced with a modern, low-maintenance design featuring ornamental grasses, cor-ten steel planters, and a geometric paver layout. The result is a welcoming, professional arrival sequence that reduces water use by 60%.",
         images: [
             "/images/projects/glendale steps.webp",
-            "/images/projects/meridian-2.jpg",
+            "/images/projects/meridian-2.webp",
         ],
         year: 2024,
         location: "Akron, OH",
@@ -78,7 +78,7 @@ export const projects: Project[] = [
             "Nestled among mature cedars, this design embraces the existing canopy while adding understory plantings, a flagstone terrace with a built-in fire pit, and landscape lighting that highlights the tree forms at night. Privacy screening was achieved with evergreen hedging rather than fencing.",
         images: [
             "/images/projects/North Brooklyn Farms.webp",
-            "/images/projects/cedar-hollow-2.jpg",
+            "/images/projects/cedar-hollow-2.webp",
         ],
         year: 2023,
         location: "Brooklyn, NY",
@@ -96,7 +96,7 @@ export const projects: Project[] = [
             "Working with the city parks department, we restored a degraded riverbank with native willows, sedges, and wildflower meadows. New ADA-accessible crushed stone trails connect the parking area to overlook platforms and a nature play area for children.",
         images: [
             "/images/projects/Wild+Cultivation+201026 (1).webp",
-            "/images/projects/riverside-2.jpg",
+            "/images/projects/riverside-2.webp",
         ],
         year: 2023,
         location: "Bend, OR",
@@ -109,8 +109,8 @@ export const projects: Project[] = [
         description:
             "A vacant city lot was transformed into 24 raised bed plots, a shared herb spiral, composting stations, and a covered pavilion for workshops. The design prioritizes accessibility, with wide pathways and raised beds at multiple heights.",
         images: [
-            "/images/projects/linnton-1.jpg",
-            "/images/projects/linnton-2.jpg",
+            "/images/projects/linnton-1.webp",
+            "/images/projects/linnton-2.webp",
         ],
         year: 2025,
         location: "Portland, OR",
