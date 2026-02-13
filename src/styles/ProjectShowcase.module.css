@@ -72,7 +72,7 @@
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: #888;
+    color: var(--color-text-muted);
     margin-bottom: 2rem;
 }
 
@@ -80,6 +80,6 @@
     max-width: 600px;
     font-size: 1.05rem;
     line-height: 1.7;
-    color: #444;
+    color: var(--color-text-muted);
     margin-bottom: 3rem;
 }

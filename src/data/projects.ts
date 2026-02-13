@@ -1,11 +1,36 @@
 export type Project = {
+    /** URL path segment — used in /projects/:slug route */
     slug: string;
+    /** Project name — page title, card heading, detail page h1 */
     title: string;
+    /** One-line teaser — shown on project cards in the grid */
     summary: string;
+    /** Full write-up — main body text on the project detail page */
     description: string;
-    images: string[];
+    /** Paths relative to /public — first image is the cover (card + detail hero) */
+    images: `/images/projects/${string}`[];
+    /** Completion year — shown in detail page metadata */
     year: number;
+    /** City/region — shown in detail page metadata */
     location: string;
+    /** Show on homepage "Featured Projects" section? */
+    featured?: boolean;
+    /** Editorial pullquote — displayed as a blockquote on the detail page */
+    designThesis?: string;
+    /** People/firms credited — listed at the bottom of the detail page */
+    collaborators?: string[];
+    /** Project type label (e.g. "Residential", "Retreat Center") — detail page metadata */
+    category?: string;
+    /** Laura's specific contribution — e.g. "Planting design", "Concept design and master plan", "Full design" */
+    role?: string;
+    /** Project origin — e.g. "Independent commission", "Master's thesis", "Collaborative at XYZ Firm" */
+    context?: string;
+    /** Project status — controls how the detail page presents the project */
+    status?: "completed" | "in-progress" | "design-phase";
+    /** Key plants used — common name (Botanical name) — shown on detail page */
+    plantPalette?: string[];
+    /** Key materials used — shown on detail page */
+    materials?: string[];
 };
 
 export const projects: Project[] = [
@@ -22,6 +47,11 @@ export const projects: Project[] = [
         ],
         year: 2024,
         location: "Costa Rica",
+        featured: true,
+        category: "Retreat Center",
+        designThesis:
+            "Let the jungle be the architecture — our role was to create thresholds between cultivated calm and wild abundance.",
+        collaborators: ["Brave Earth Foundation", "Finca Tierra Viva"],
     },
     {
         slug: "glendale-steps",
@@ -36,6 +66,8 @@ export const projects: Project[] = [
         ],
         year: 2024,
         location: "Akron, OH",
+        featured: true,
+        category: "Residential",
     },
     {
         slug: "north-brooklyn-farms",
@@ -50,6 +82,10 @@ export const projects: Project[] = [
         ],
         year: 2023,
         location: "Brooklyn, NY",
+        featured: true,
+        category: "Urban Agriculture",
+        designThesis:
+            "A farm in the city shouldn't feel like a compromise — it should feel like a revelation.",
     },
     {
         slug: "riverside-park-restoration",
@@ -64,20 +100,6 @@ export const projects: Project[] = [
         ],
         year: 2023,
         location: "Bend, OR",
-    },
-    {
-        slug: "hartwell-commercial-campus",
-        title: "Hartwell Tech Campus",
-        summary:
-            "A tech campus with bioswales, pollinator gardens, and employee gathering spaces.",
-        description:
-            "This 5-acre campus landscape integrates stormwater management with bioswales and rain gardens while creating inviting outdoor break areas. Pollinator-friendly plantings, shade structures, and a central lawn for company events complete the design.",
-        images: [
-            "/images/projects/hartwell-1.jpg",
-            "/images/projects/hartwell-2.jpg",
-        ],
-        year: 2024,
-        location: "Raleigh, NC",
     },
     {
         slug: "linnton-community-garden",

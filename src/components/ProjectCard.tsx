@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
 import type { Project } from "../data/projects";
 import styles from "../styles/ProjectCard.module.css";
 import LazyImage from "./LazyImage";
+import TransitionLink from "./TransitionLink";
 
 type ProjectCardProps = {
     project: Project;
@@ -9,18 +9,22 @@ type ProjectCardProps = {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
     return (
-        <Link to={`/projects/${project.slug}`} className={styles.card}>
+        <TransitionLink
+            to={`/projects/${project.slug}`}
+            className={styles.card}
+        >
             <div className={styles.imageWrap}>
                 <LazyImage
                     src={project.images[0]}
                     alt={project.title}
                     className={styles.image}
                 />
+                <div className={styles.scrim} />
             </div>
             <div className={styles.info}>
                 <h3>{project.title}</h3>
                 <p>{project.summary}</p>
             </div>
-        </Link>
+        </TransitionLink>
     );
 }
