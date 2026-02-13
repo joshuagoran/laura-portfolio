@@ -17,15 +17,6 @@
     transition: transform 0.8s var(--ease-out-expo);
 }
 
-.scrim {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent 60%);
-    opacity: 0;
-    transition: opacity 0.4s var(--ease-out-expo);
-    pointer-events: none;
-}
-
 .info {
     padding: var(--space-sm) 0;
 }
@@ -43,10 +34,6 @@
 @media (hover: hover) {
     .card:hover .image {
         transform: scale(1.04);
-    }
-
-    .card:hover .scrim {
-        opacity: 1;
     }
 
     .card:hover .info h3 {

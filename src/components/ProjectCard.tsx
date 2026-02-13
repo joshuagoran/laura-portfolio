@@ -19,7 +19,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     alt={project.title}
                     className={styles.image}
                 />
-                <div className={styles.scrim} />
             </div>
             <div className={styles.info}>
                 <h3>{project.title}</h3>
