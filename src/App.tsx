@@ -1,30 +1,39 @@
+import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-// import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
+import ScrollToTop from "./components/ScrollToTop";
+
+// Home is eagerly loaded — it's the landing page and pre-rendered,
+// so lazy-loading it causes a flash during hydration.
 import Home from "./pages/Home";
-import ProjectDetail from "./pages/ProjectDetail";
-import Projects from "./pages/Projects";
-import Services from "./pages/Services";
-import Sketches from "./pages/Sketches";
+const Projects = lazy(() => import("./pages/Projects"));
+const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
+const About = lazy(() => import("./pages/About"));
+const Services = lazy(() => import("./pages/Services"));
+const Sketches = lazy(() => import("./pages/Sketches"));
+const Contact = lazy(() => import("./pages/Contact"));
 
 export default function App() {
     return (
         <div className="app">
+            <ScrollToTop />
             <Navbar />
             <main>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/projects" element={<Projects />} />
-                    <Route path="/projects/:slug" element={<ProjectDetail />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/services" element={<Services />} />
-                    <Route path="/sketches" element={<Sketches />} />
-                    <Route path="/contact" element={<Contact />} />
-                </Routes>
+                <Suspense>
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/projects" element={<Projects />} />
+                        <Route
+                            path="/projects/:slug"
+                            element={<ProjectDetail />}
+                        />
+                        <Route path="/about" element={<About />} />
+                        <Route path="/services" element={<Services />} />
+                        <Route path="/sketches" element={<Sketches />} />
+                        <Route path="/contact" element={<Contact />} />
+                    </Routes>
+                </Suspense>
             </main>
-            {/* <Footer /> */}
         </div>
     );
 }
