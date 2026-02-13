@@ -1,22 +1,17 @@
-import { Link } from "react-router-dom";
 import type { Project } from "../data/projects";
 import styles from "../styles/FeaturedProject.module.css";
 import LazyImage from "./LazyImage";
+import TransitionLink from "./TransitionLink";
 
 type FeaturedProjectProps = {
     project: Project;
-    index: number;
 };
 
-export default function FeaturedProject({
-    project,
-    index,
-}: FeaturedProjectProps) {
+export default function FeaturedProject({ project }: FeaturedProjectProps) {
     return (
-        <Link
+        <TransitionLink
             to={`/projects/${project.slug}`}
             className={styles.item}
-            style={{ animationDelay: `${index * 0.15}s` }}
         >
             <div className={styles.imageWrap}>
                 <LazyImage
@@ -29,6 +24,6 @@ export default function FeaturedProject({
                 <h3>{project.title}</h3>
                 <p>{project.summary}</p>
             </div>
-        </Link>
+        </TransitionLink>
     );
 }

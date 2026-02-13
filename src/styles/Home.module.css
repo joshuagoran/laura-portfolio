@@ -1,0 +1,33 @@
+.featuredSection {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--space-2xl) var(--space-lg);
+}
+
+.sectionHeader {
+    margin-bottom: var(--space-xl);
+}
+
+.sectionLabel {
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-xs);
+}
+
+.sectionTitle {
+    font-size: clamp(2rem, 4vw, var(--text-3xl));
+}
+
+.featuredGrid {
+    display: grid;
+    gap: var(--space-xl);
+}
+
+@media (min-width: 768px) {
+    .featuredGrid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
