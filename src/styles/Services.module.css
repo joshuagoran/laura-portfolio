@@ -1,39 +1,61 @@
+.title {
+    font-size: clamp(2rem, 4vw, var(--text-3xl));
+    margin-bottom: var(--space-md);
+}
+
 .intro {
-    font-style: italic;
-    color: #444;
-    margin-bottom: 3rem;
+    font-size: var(--text-lg);
+    line-height: 1.75;
+    color: var(--color-text);
+    max-width: 640px;
+    margin-bottom: var(--space-2xl);
 }
 
-.tiers {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+.services {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    margin-bottom: var(--space-xl);
 }
 
-.card {
-    border: 1px solid #ddd;
-    padding: 2rem;
+.service {
+    max-width: 640px;
+    padding-bottom: var(--space-xl);
+    border-bottom: 1px solid var(--color-border);
 }
 
-.cardTitle {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+.serviceTitle {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-sm);
+}
+
+.serviceDescription {
+    font-size: var(--text-base);
+    line-height: 1.75;
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
 }
 
 .price {
-    font-size: 0.95rem;
-    color: #666;
-    margin-bottom: 1rem;
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
 }
 
-.card p {
-    color: #444;
-    line-height: 1.7;
-    margin-bottom: 0.75rem;
+.cta {
+    max-width: 640px;
 }
 
-.card ul {
-    padding-left: 1.25rem;
-    color: #444;
-    line-height: 1.8;
+.ctaText {
+    font-size: var(--text-base);
+    line-height: 1.75;
+    color: var(--color-text);
+}
+
+.ctaLink {
+    color: var(--color-accent);
+    transition: opacity 0.2s ease;
+}
+
+.ctaLink:hover {
+    opacity: 0.6;
 }

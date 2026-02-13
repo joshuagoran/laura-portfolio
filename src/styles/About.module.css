@@ -11,7 +11,7 @@
 }
 
 .content {
-    max-width: 1200px;
+    max-width: var(--max-width);
     margin: 0 auto;
     padding: 3rem 2rem 4rem;
 }
@@ -25,6 +25,6 @@
     max-width: 700px;
     font-size: 1.05rem;
     line-height: 1.7;
-    color: #444;
+    color: var(--color-text-muted);
     margin-bottom: 1rem;
 }

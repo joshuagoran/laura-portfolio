@@ -1,6 +1,36 @@
 .footer {
-    text-align: center;
-    padding: 4rem 1rem;
-    font-size: 0.85rem;
-    color: #aaa;
+    padding: var(--space-lg);
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-xs) var(--space-md);
+}
+
+.location {
+    font-size: var(--text-sm);
+    color: var(--color-text);
+    letter-spacing: 0.05em;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-left: auto;
+}
+
+.copyright {
+    font-size: var(--text-sm);
+    color: var(--color-text);
+}
+
+.instagram {
+    font-size: var(--text-sm);
+    color: var(--color-text);
+    transition: opacity 0.2s ease;
+}
+
+.instagram:hover {
+    opacity: 0.5;
 }
