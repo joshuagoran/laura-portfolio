@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Get staged files (added, copied, modified, renamed) matching Biome-supported extensions
+FILES=$(git diff --cached --name-only --diff-filter=ACMR -- '*.ts' '*.tsx' '*.js' '*.jsx' '*.css' '*.json')
+
+if [ -z "$FILES" ]; then
+    exit 0
+fi
+
+# Auto-fix staged files and re-stage so fixes are included in the commit
+npx biome check --write $FILES || exit 1
+echo "$FILES" | xargs git add

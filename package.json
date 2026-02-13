@@ -9,7 +9,8 @@
         "lint": "biome check .",
         "format": "biome format --write .",
         "preview": "vite preview",
-        "images:responsive": "node scripts/generate-responsive-images.mjs"
+        "images:responsive": "node scripts/generate-responsive-images.mjs",
+        "prepare": "git config core.hooksPath .githooks"
     },
     "dependencies": {
         "react": "^19.2.0",
