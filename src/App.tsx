@@ -6,6 +6,7 @@ import ScrollToTop from "./components/ScrollToTop";
 // Home is eagerly loaded — it's the landing page and pre-rendered,
 // so lazy-loading it causes a flash during hydration.
 import Home from "./pages/Home";
+
 const Projects = lazy(() => import("./pages/Projects"));
 const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
 const About = lazy(() => import("./pages/About"));
@@ -29,7 +30,7 @@ export default function App() {
                         />
                         <Route path="/about" element={<About />} />
                         <Route path="/services" element={<Services />} />
-                        <Route path="/sketches" element={<Sketches />} />
+                        <Route path="/process" element={<Sketches />} />
                         <Route path="/contact" element={<Contact />} />
                     </Routes>
                 </Suspense>

@@ -8,11 +8,10 @@ export default function Services() {
             <Reveal>
                 <h1 className={styles.title}>How I Work</h1>
                 <p className={styles.intro}>
-                    Every project starts with a conversation about your site, how
-                    you use your outdoor space, and what you want it to feel like.
-                    From there I develop a design rooted in your specific
-                    conditions — soil, light, climate, and the plants that will
-                    thrive there across seasons.
+                    Every project starts with a conversation about your site,
+                    how you use your outdoor space, and what you want it to feel
+                    like. From there, I develop a design rooted in your specific
+                    conditions.
                 </p>
             </Reveal>
 
@@ -43,9 +42,9 @@ export default function Services() {
                             A full design process for gardens up to 2,000 square
                             feet. I start with a site analysis — sun exposure,
                             drainage, soil conditions, existing plants worth
-                            keeping — then develop a layout plan with a
-                            detailed planting strategy. The deliverable includes
-                            plant sourcing, an installation layout, a seasonal
+                            keeping — then develop a layout plan with a detailed
+                            planting strategy. The deliverable includes plant
+                            sourcing, an installation layout, a seasonal
                             maintenance guide, and a walkthrough so you
                             understand every choice.
                         </p>
@@ -60,8 +59,9 @@ export default function Services() {
                             For larger or more complex projects — multi-room
                             gardens, rewilding, edible landscapes, educational
                             or cultural garden spaces. These vary enough in
-                            scope that I quote them individually after an initial
-                            site visit and conversation about your goals.
+                            scope that I quote them individually after an
+                            initial site visit and conversation about your
+                            goals.
                         </p>
                         <p className={styles.price}>Custom quote</p>
                     </div>
@@ -75,7 +75,7 @@ export default function Services() {
                         <Link to="/contact" className={styles.ctaLink}>
                             Reach out
                         </Link>{" "}
-                        and we can figure it out together.
+                        and we can figure it out together!
                     </p>
                 </div>
             </Reveal>

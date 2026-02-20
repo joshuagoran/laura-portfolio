@@ -1,12 +1,14 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import styles from "../styles/ImageGallery.module.css";
 import LazyImage from "./LazyImage";
 
 type ImageGalleryProps = {
     images: string[];
+    layout: "masonry" | "grid";
 };
 
-export default function ImageGallery({ images }: ImageGalleryProps) {
+export default function ImageGallery({ images, layout }: ImageGalleryProps) {
     const [selected, setSelected] = useState<number | null>(null);
     const lightboxRef = useRef<HTMLDivElement>(null);
     const triggerRef = useRef<HTMLButtonElement | null>(null);
@@ -93,7 +95,9 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
 
     return (
         <>
-            <div className={styles.gallery}>
+            <div
+                className={layout === "masonry" ? styles.gallery : styles.grid}
+            >
                 {images.map((src, i) => (
                     <button
                         type="button"
@@ -110,59 +114,61 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
                 ))}
             </div>
 
-            {selected !== null && (
-                <div
-                    ref={lightboxRef}
-                    className={styles.lightbox}
-                    role="dialog"
-                    aria-modal="true"
-                    aria-label={`Sketch ${selected + 1} of ${images.length}`}
-                    tabIndex={-1}
-                    onTouchStart={handleTouchStart}
-                    onTouchEnd={handleTouchEnd}
-                >
-                    {/* biome-ignore lint/a11y/useKeyWithClickEvents: backdrop click-to-close is supplemental; close button handles keyboard */}
-                    {/* biome-ignore lint/a11y/noStaticElementInteractions: decorative backdrop overlay */}
-                    <div className={styles.backdrop} onClick={close} />
-
-                    <button
-                        type="button"
-                        className={styles.closeBtn}
-                        onClick={close}
-                        aria-label="Close"
+            {selected !== null &&
+                createPortal(
+                    <div
+                        ref={lightboxRef}
+                        className={styles.lightbox}
+                        role="dialog"
+                        aria-modal="true"
+                        aria-label={`Image ${selected + 1} of ${images.length}`}
+                        tabIndex={-1}
+                        onTouchStart={handleTouchStart}
+                        onTouchEnd={handleTouchEnd}
                     >
-                        &times;
-                    </button>
+                        {/* biome-ignore lint/a11y/useKeyWithClickEvents: backdrop click-to-close is supplemental; close button handles keyboard */}
+                        {/* biome-ignore lint/a11y/noStaticElementInteractions: decorative backdrop overlay */}
+                        <div className={styles.backdrop} onClick={close} />
 
-                    <button
-                        type="button"
-                        className={`${styles.navBtn} ${styles.prevBtn}`}
-                        onClick={prev}
-                        aria-label="Previous"
-                    >
-                        &#8249;
-                    </button>
+                        <button
+                            type="button"
+                            className={styles.closeBtn}
+                            onClick={close}
+                            aria-label="Close"
+                        >
+                            &times;
+                        </button>
 
-                    <img
-                        src={images[selected]}
-                        alt={`Sketch ${selected + 1}`}
-                        className={styles.lightboxImage}
-                    />
+                        <button
+                            type="button"
+                            className={`${styles.navBtn} ${styles.prevBtn}`}
+                            onClick={prev}
+                            aria-label="Previous"
+                        >
+                            &#8249;
+                        </button>
 
-                    <button
-                        type="button"
-                        className={`${styles.navBtn} ${styles.nextBtn}`}
-                        onClick={next}
-                        aria-label="Next"
-                    >
-                        &#8250;
-                    </button>
+                        <img
+                            src={images[selected]}
+                            alt={`${selected + 1} of ${images.length}`}
+                            className={styles.lightboxImage}
+                        />
 
-                    <p className={styles.counter}>
-                        {selected + 1} / {images.length}
-                    </p>
-                </div>
-            )}
+                        <button
+                            type="button"
+                            className={`${styles.navBtn} ${styles.nextBtn}`}
+                            onClick={next}
+                            aria-label="Next"
+                        >
+                            &#8250;
+                        </button>
+
+                        <p className={styles.counter}>
+                            {selected + 1} / {images.length}
+                        </p>
+                    </div>,
+                    document.body,
+                )}
         </>
     );
 }

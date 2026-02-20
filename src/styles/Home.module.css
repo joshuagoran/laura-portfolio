@@ -1,20 +1,11 @@
 .featuredSection {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: var(--space-2xl) var(--space-lg);
+    padding: var(--space-lg) var(--space-lg);
 }
 
 .sectionHeader {
-    margin-bottom: var(--space-xl);
-}
-
-.sectionLabel {
-    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
-    font-size: var(--text-xs);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--color-text-muted);
-    margin-bottom: var(--space-xs);
+    margin-bottom: var(--space-md);
 }
 
 .sectionTitle {

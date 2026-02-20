@@ -14,7 +14,7 @@ export default function LazyImage({ alt, style, ...props }: LazyImageProps) {
             style={{
                 ...style,
                 opacity: loaded ? 1 : 0,
-                transition: "opacity 0.4s ease",
+                transition: "opacity 0.4s ease, transform 0.3s ease",
             }}
         />
     );

@@ -108,7 +108,7 @@ export default function Navbar() {
                         <NavLink to="/projects">Projects</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/sketches">Sketches</NavLink>
+                        <NavLink to="/process">Process</NavLink>
                     </li>
                     <li>
                         <NavLink to="/services">Services</NavLink>

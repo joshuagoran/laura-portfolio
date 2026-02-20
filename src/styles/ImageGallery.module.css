@@ -23,6 +23,17 @@
     }
 }
 
+.grid {
+    display: grid;
+    gap: var(--space-sm);
+}
+
+@media (min-width: 640px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 .thumbButton {
     display: block;
     width: 100%;
@@ -32,12 +43,18 @@
     cursor: pointer;
     margin-bottom: var(--space-xs);
     break-inside: avoid;
+    overflow: hidden;
 }
 
 .thumb {
     width: 100%;
     display: block;
     background: var(--color-bg-alt);
+    transition: transform 0.3s ease;
+}
+
+.thumbButton:hover .thumb {
+    transform: scale(1.05);
 }
 
 /* Lightbox */
@@ -108,11 +125,11 @@
 }
 
 .prevBtn {
-    left: var(--space-sm);
+    left: var(--space-md);
 }
 
 .nextBtn {
-    right: var(--space-sm);
+    right: var(--space-md);
 }
 
 .counter {

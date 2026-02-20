@@ -14,8 +14,7 @@ export default function Home() {
             <section className={styles.featuredSection}>
                 <Reveal>
                     <div className={styles.sectionHeader}>
-                        <p className={styles.sectionLabel}>Selected Work</p>
-                        <h2 className={styles.sectionTitle}>Recent Projects</h2>
+                        <h2 className={styles.sectionTitle}>Selected Work</h2>
                     </div>
                 </Reveal>
 

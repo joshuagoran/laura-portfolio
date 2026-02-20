@@ -33,11 +33,7 @@ export default function Hero() {
             />
             <div className={styles.scrim} />
             <div className={styles.overlay}>
-                <h1>Landscapes That Live</h1>
-                <p>
-                    Thoughtful landscape design rooted in place, ecology, and
-                    how people actually use their outdoor spaces.
-                </p>
+                <h1>Adaptive reuse, productive landscapes</h1>
                 <Link to="/projects" className={styles.cta}>
                     View Projects
                 </Link>

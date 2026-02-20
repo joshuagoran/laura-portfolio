@@ -33,8 +33,8 @@ const pageMeta: Record<string, { title: string; description: string }> = {
         description:
             "Landscape design services from garden visions to full site plans. Based in Portland, OR.",
     },
-    "/sketches": {
-        title: "Sketches | Laura Noël",
+    "/process": {
+        title: "Process | Laura Noël",
         description:
             "Hand-drawn landscape sketches and conceptual drawings by Laura Noël.",
     },

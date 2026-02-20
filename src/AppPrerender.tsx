@@ -20,7 +20,7 @@ export default function AppPrerender() {
                     <Route path="/projects/:slug" element={<ProjectDetail />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/services" element={<Services />} />
-                    <Route path="/sketches" element={<Sketches />} />
+                    <Route path="/process" element={<Sketches />} />
                     <Route path="/contact" element={<Contact />} />
                 </Routes>
             </main>

@@ -1,4 +1,5 @@
 import { Link, useParams } from "react-router-dom";
+import ImageGallery from "../components/ImageGallery";
 import LazyImage from "../components/LazyImage";
 import Reveal from "../components/Reveal";
 import { projects } from "../data/projects";
@@ -28,8 +29,19 @@ export default function ProjectDetail() {
                 </Link>
 
                 <Reveal>
-                    <h1 className={styles.title}>{project.title}</h1>
+                    <div className={styles.titleRow}>
+                        <h1 className={styles.title}>{project.title}</h1>
+                        {project.status === "in-progress" && (
+                            <span className={styles.badge}>In Progress</span>
+                        )}
+                    </div>
                 </Reveal>
+
+                {project.subtitle && (
+                    <Reveal>
+                        <p className={styles.subtitle}>{project.subtitle}</p>
+                    </Reveal>
+                )}
 
                 <Reveal>
                     <dl className={styles.colophon}>
@@ -37,10 +49,16 @@ export default function ProjectDetail() {
                             <dt>Location</dt>
                             <dd>{project.location}</dd>
                         </div>
-                        <div className={styles.colophonItem}>
-                            <dt>Year</dt>
-                            <dd>{project.year}</dd>
-                        </div>
+                        {project.year && (
+                            <div className={styles.colophonItem}>
+                                <dt>Year</dt>
+                                <dd>
+                                    {project.year}
+                                    {project.status === "in-progress" &&
+                                        " — Present"}
+                                </dd>
+                            </div>
+                        )}
                         {project.category && (
                             <div className={styles.colophonItem}>
                                 <dt>Type</dt>
@@ -51,7 +69,11 @@ export default function ProjectDetail() {
                 </Reveal>
 
                 <Reveal>
-                    <p className={styles.description}>{project.description}</p>
+                    <div className={styles.description}>
+                        {project.description.split("\n\n").map((paragraph) => (
+                            <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+                        ))}
+                    </div>
                 </Reveal>
 
                 {project.designThesis && (
@@ -64,16 +86,7 @@ export default function ProjectDetail() {
 
                 {restImages.length > 0 && (
                     <Reveal>
-                        <div className={styles.imageGrid}>
-                            {restImages.map((src, i) => (
-                                <LazyImage
-                                    key={src}
-                                    src={src}
-                                    alt={`${project.title} detail ${i + 1}`}
-                                    className={styles.gridImage}
-                                />
-                            ))}
-                        </div>
+                        <ImageGallery images={restImages} layout="grid" />
                     </Reveal>
                 )}
 
@@ -89,7 +102,6 @@ export default function ProjectDetail() {
                         </div>
                     </Reveal>
                 )}
-
             </div>
         </article>
     );
