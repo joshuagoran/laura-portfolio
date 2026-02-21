@@ -2,6 +2,10 @@
 
 The site needs two things: a working contact form and a professional email address. These overlap — the contact form needs somewhere to deliver messages, and the email setup determines how you reply.
 
+## Current Setup (Feb 20, 2026)
+
+Went with **Option A (Formspree)** for now. Domain may change, so avoiding DNS-dependent options until that's settled. Form ID: `xjgeendb`, wired up in `src/components/ContactForm.tsx`.
+
 ## Option A: Minimal (Formspree only)
 
 **Cost:** Free (50 submissions/month)
