@@ -5,11 +5,13 @@ import styles from "../styles/About.module.css";
 export default function About() {
     return (
         <article className={styles.page}>
+            {/* TODO: replace with new photo
             <LazyImage
                 src="/images/about-hero.webp"
                 alt="Laura Noel in a garden setting"
                 className={styles.heroImage}
             />
+            */}
             <div className={styles.content}>
                 <Reveal>
                     <h1 className={styles.title}>About</h1>
