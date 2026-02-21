@@ -8,7 +8,9 @@ export default function ContactForm() {
         subject: "",
         message: "",
     });
-    const [submitted, setSubmitted] = useState(false);
+    const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
+        "idle",
+    );
 
     function handleChange(
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -16,13 +18,26 @@ export default function ContactForm() {
         setForm({ ...form, [e.target.name]: e.target.value });
     }
 
-    function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
+    async function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
         e.preventDefault();
-        // TODO: actually send form data to a backend or email service
-        setSubmitted(true);
+        setStatus("sending");
+        try {
+            const res = await fetch("https://formspree.io/f/xjgeendb", {
+                method: "POST",
+                headers: { Accept: "application/json" },
+                body: new FormData(e.currentTarget),
+            });
+            if (res.ok) {
+                setStatus("sent");
+            } else {
+                setStatus("error");
+            }
+        } catch {
+            setStatus("error");
+        }
     }
 
-    if (submitted) {
+    if (status === "sent") {
         return (
             <p className={styles.thanks}>
                 Thanks for reaching out! I'll be in touch soon.
@@ -69,7 +84,14 @@ export default function ContactForm() {
                     required
                 />
             </label>
-            <button type="submit">Send</button>
+            {status === "error" && (
+                <p className={styles.error}>
+                    Something went wrong. Please try again.
+                </p>
+            )}
+            <button type="submit" disabled={status === "sending"}>
+                {status === "sending" ? "Sending…" : "Send"}
+            </button>
         </form>
     );
 }

@@ -37,4 +37,12 @@
 
 .thanks {
     margin-top: 1.5rem;
+    color: var(--color-accent);
+    font-weight: 600;
+    font-size: var(--text-md);
+}
+
+.error {
+    color: #b33;
+    font-size: 0.9rem;
 }
