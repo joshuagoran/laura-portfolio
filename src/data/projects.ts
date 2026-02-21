@@ -70,7 +70,7 @@ export const projects: Project[] = [
         year: 2024,
         location: "Akron, OH",
         featured: true,
-        category: "Preservation",
+        category: "Preservation & Planting Design",
         status: "in-progress",
         collaborators: [
             "Progress Through Preservation Akron",

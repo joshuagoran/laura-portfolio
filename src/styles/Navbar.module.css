@@ -57,6 +57,11 @@
     opacity: 0.5;
 }
 
+.links a:global(.active) {
+    color: var(--color-accent-warm);
+    font-weight: 600;
+}
+
 /* Hamburger button */
 .hamburger {
     display: flex;

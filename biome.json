@@ -5,6 +5,11 @@
         "indentStyle": "space",
         "indentWidth": 4
     },
+    "css": {
+        "parser": {
+            "cssModules": true
+        }
+    },
     "javascript": {
         "formatter": {
             "quoteStyle": "double"
