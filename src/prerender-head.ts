@@ -36,7 +36,7 @@ const pageMeta: Record<string, { title: string; description: string }> = {
     "/process": {
         title: "Process | Laura Noël",
         description:
-            "Hand-drawn landscape sketches and conceptual drawings by Laura Noël.",
+            "Process photos, sketches, and conceptual drawings by Laura Noël.",
     },
     "/contact": {
         title: "Contact | Laura Noël",

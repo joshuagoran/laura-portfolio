@@ -22,7 +22,7 @@ React 19 SPA built with Vite 7 and TypeScript, using React Router DOM v7 for cli
 - `/projects/:slug` → Project detail (slug-based lookup)
 - `/about` → About page
 - `/services` → Service tiers (Mini Garden Vision, Signature Planting Plan, Site Planning)
-- `/sketches` → Sketch gallery (uses `ImageGallery` component with CSS columns masonry + lightbox)
+- `/process` → Process gallery (uses `ImageGallery` component with CSS columns masonry + lightbox)
 - `/contact` → Contact form
 
 All pages except Home are lazy-loaded via `React.lazy` + `Suspense`.
@@ -30,7 +30,7 @@ All pages except Home are lazy-loaded via `React.lazy` + `Suspense`.
 **Data layer**: No API or database. All content is static and inline.
 - `projects.ts` — `Project` type + synchronous `projects` array and `categories` export. The `Project` type has JSDoc comments on each field describing where it's used — **keep those comments up to date when changing how fields are consumed in components.** Image paths use a template literal type (`` `/images/projects/${string}`[] ``) for path enforcement.
 - Hero, About, Contact, Services content is hardcoded directly in their components
-- Sketch images stored in `public/images/sketches/`; `ImageGallery` component provides thumbnail grid + lightbox
+- Process images stored in `public/images/process/`; `ImageGallery` component provides thumbnail grid + lightbox
 
 No global state management. Components use local `useState` only where needed (e.g., category filtering).
 

@@ -4,10 +4,10 @@ import Navbar from "./components/Navbar";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
+import Process from "./pages/Process";
 import ProjectDetail from "./pages/ProjectDetail";
 import Projects from "./pages/Projects";
 import Services from "./pages/Services";
-import Sketches from "./pages/Sketches";
 
 export default function AppPrerender() {
     return (
@@ -20,7 +20,7 @@ export default function AppPrerender() {
                     <Route path="/projects/:slug" element={<ProjectDetail />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/services" element={<Services />} />
-                    <Route path="/process" element={<Sketches />} />
+                    <Route path="/process" element={<Process />} />
                     <Route path="/contact" element={<Contact />} />
                 </Routes>
             </main>

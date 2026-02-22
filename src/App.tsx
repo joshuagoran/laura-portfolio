@@ -11,7 +11,7 @@ const Projects = lazy(() => import("./pages/Projects"));
 const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
 const About = lazy(() => import("./pages/About"));
 const Services = lazy(() => import("./pages/Services"));
-const Sketches = lazy(() => import("./pages/Sketches"));
+const Process = lazy(() => import("./pages/Process"));
 const Contact = lazy(() => import("./pages/Contact"));
 
 export default function App() {
@@ -30,7 +30,7 @@ export default function App() {
                         />
                         <Route path="/about" element={<About />} />
                         <Route path="/services" element={<Services />} />
-                        <Route path="/process" element={<Sketches />} />
+                        <Route path="/process" element={<Process />} />
                         <Route path="/contact" element={<Contact />} />
                     </Routes>
                 </Suspense>
