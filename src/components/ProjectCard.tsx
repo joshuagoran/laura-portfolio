@@ -18,6 +18,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     src={project.images[0]}
                     alt={project.title}
                     className={styles.image}
+                    style={
+                        project.imagePosition
+                            ? { objectPosition: project.imagePosition }
+                            : undefined
+                    }
                 />
             </div>
             <div className={styles.info}>

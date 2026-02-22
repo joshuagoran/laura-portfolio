@@ -11,6 +11,8 @@ export type Project = {
     description: string;
     /** Paths relative to /public — first image is the cover (card + detail hero) */
     images: `/images/projects/${string}`[];
+    /** CSS object-position for cover image cropping — applied on card/featured views */
+    imagePosition?: string;
     /** Completion year — shown in detail page metadata */
     year?: number;
     /** City/region — shown in detail page metadata */
@@ -45,6 +47,7 @@ export const projects: Project[] = [
         description:
             "This project grew out of my involvement with a multi-disciplinary group of preservation professionals, architects, planners, and community stakeholders examining the future of Firestone Plant 1 in Akron, Ohio. My role has focused on advocacy and historic research for cultural landscape designation application.\n\nThe potential demolition of Firestone Plant 1 raises broader questions about how post-industrial cities manage legacy assets. In this case, the discussion around Firestone has highlighted the importance of distinguishing between structural feasibility and policy direction. How do municipal systems handle complex historic properties when they become difficult? What are the metrics and framing being used to justify demolition, how are they pliable, where can existing policies be updated to favor adaptive reuse just as equally demolition?\n\nThis research reflects my interest in approaching complex sites through integrated analysis, and research in: history, environmental systems, and policy.",
         images: ["/images/projects/firestone-plant-1-clocktower-bw.webp"],
+        imagePosition: "top",
         year: 2026,
         location: "Akron, OH",
         featured: true,

@@ -18,6 +18,11 @@ export default function FeaturedProject({ project }: FeaturedProjectProps) {
                     src={project.images[0]}
                     alt={project.title}
                     className={styles.image}
+                    style={
+                        project.imagePosition
+                            ? { objectPosition: project.imagePosition }
+                            : undefined
+                    }
                 />
             </div>
             <div className={styles.caption}>
