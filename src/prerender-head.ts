@@ -11,7 +11,7 @@ type Head = {
 };
 
 const DEFAULT_DESCRIPTION =
-    "Thoughtful landscape design rooted in place, ecology, and how people actually use their outdoor spaces. Based in Portland, OR.";
+    "Thoughtful landscape design rooted in place, ecology, and how people actually use their outdoor spaces. Based in Akron, OH.";
 
 const pageMeta: Record<string, { title: string; description: string }> = {
     "/": {
@@ -21,7 +21,7 @@ const pageMeta: Record<string, { title: string; description: string }> = {
     "/about": {
         title: "About | Laura Noël",
         description:
-            "Portland-based landscape designer creating spaces rooted in ecology, place, and people.",
+            "Akron-based landscape designer creating spaces rooted in ecology, place, and people.",
     },
     "/projects": {
         title: "Projects | Laura Noël",
@@ -31,7 +31,7 @@ const pageMeta: Record<string, { title: string; description: string }> = {
     "/services": {
         title: "Services | Laura Noël",
         description:
-            "Landscape design services from garden visions to full site plans. Based in Portland, OR.",
+            "Landscape design services from garden visions to full site plans. Based in Akron, OH.",
     },
     "/process": {
         title: "Process | Laura Noël",
@@ -41,7 +41,7 @@ const pageMeta: Record<string, { title: string; description: string }> = {
     "/contact": {
         title: "Contact | Laura Noël",
         description:
-            "Get in touch about your landscape design project. Based in Portland, OR.",
+            "Get in touch about your landscape design project. Based in Akron, OH.",
     },
 };
 

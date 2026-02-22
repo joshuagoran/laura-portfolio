@@ -44,6 +44,15 @@ No global state management. Components use local `useState` only where needed (e
 
 **Layout**: `App.tsx` renders `Navbar` + `<main>` with `<Routes>`. No footer currently (deferred — see `Ideas/site-redesign-proposal.md`). Pages use `var(--max-width)` for consistent max-width container.
 
+## SEO
+
+- `public/robots.txt` — crawl directives, points to sitemap
+- `public/sitemap.xml` — all pages with priority. **Update when adding/removing routes or projects.**
+- `index.html` — JSON-LD LocalBusiness schema. Update if business info changes.
+- `src/prerender-head.ts` — per-page title, description, OG/Twitter tags. **Update when adding new pages.**
+
+When committing changes that add/remove pages or projects, update `sitemap.xml` and `prerender-head.ts` accordingly.
+
 ## Conventions
 
 - Components use PascalCase default exports in `.tsx` files
