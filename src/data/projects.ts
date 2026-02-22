@@ -64,6 +64,9 @@ export const projects: Project[] = [
         images: [
             "/images/projects/glendale steps.webp",
             "/images/projects/glendale-steps-sitemap.webp",
+            "/images/projects/glendale-steps-early-spring-sheet.webp",
+            "/images/projects/glendale-steps-snow.webp",
+            "/images/projects/glendale-steps-perspective-drawing.webp",
         ],
         year: 2024,
         location: "Akron, OH",
@@ -98,7 +101,7 @@ export const projects: Project[] = [
         year: 2019,
         location: "Akron, OH",
         featured: true,
-        category: "Preservation",
+        category: "Research / Concept",
     },
     {
         slug: "brave-earth",
@@ -113,7 +116,6 @@ export const projects: Project[] = [
         ],
         year: 2019,
         location: "Costa Rica",
-        featured: true,
         category: "Retreat Center",
         collaborators: ["Brave Earth Foundation", "Finca Tierra Viva"],
     },
@@ -130,5 +132,25 @@ export const projects: Project[] = [
         ],
         location: "Asheville, NC / Brooklyn, NY",
         category: "Urban Agriculture",
+    },
+    {
+        slug: "tulip-poplar-residence",
+        title: "Tulip Poplar Residence",
+        summary:
+            "Residential planting design for a hillside property in Asheville, from site analysis through installation.",
+        description: "",
+        images: [
+            "/images/projects/tulip-poplar-plan.webp",
+            "/images/projects/tulip-poplar-install-photo.webp",
+            "/images/projects/tulip-poplar-sketch.webp",
+            "/images/projects/tulip-poplar-horseshoe.webp",
+            "/images/projects/tulip-poplar-site-circulation.webp",
+            "/images/projects/tulip-poplar-site-diagram-planting.webp",
+            "/images/projects/tulip-poplar-site-diagram-topo.webp",
+        ],
+        year: 2020,
+        location: "Asheville, NC",
+        featured: true,
+        category: "Residential",
     },
 ];
