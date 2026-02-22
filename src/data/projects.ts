@@ -44,10 +44,7 @@ export const projects: Project[] = [
             "Advocacy and historic research for cultural landscape designation of a legacy industrial site in Akron.",
         description:
             "This project grew out of my involvement with a multi-disciplinary group of preservation professionals, architects, planners, and community stakeholders examining the future of Firestone Plant 1 in Akron, Ohio. My role has focused on advocacy and historic research for cultural landscape designation application.\n\nThe potential demolition of Firestone Plant 1 raises broader questions about how post-industrial cities manage legacy assets. In this case, the discussion around Firestone has highlighted the importance of distinguishing between structural feasibility and policy direction. How do municipal systems handle complex historic properties when they become difficult? What are the metrics and framing being used to justify demolition, how are they pliable, where can existing policies be updated to favor adaptive reuse just as equally demolition?\n\nThis research reflects my interest in approaching complex sites through integrated analysis, and research in: history, environmental systems, and policy.",
-        images: [
-            "/images/projects/placeholder.webp",
-            "/images/projects/placeholder.webp",
-        ],
+        images: ["/images/projects/firestone-plant-1-clocktower-bw.webp"],
         year: 2026,
         location: "Akron, OH",
         featured: true,
@@ -63,9 +60,7 @@ export const projects: Project[] = [
             "At the foot of a parking lot adjacent to I-59, a monolithic stone staircase descends toward what was intended to be a public park designed by landscape architect Warren Manning. Built in 1936, the stairs appear like a mirage, ceremonial in stature, but unresolved. It stands as one of the few built remnants of the larger civic landscape that was never completed.\n\nManning's plan envisioned the stairs as a threshold and transition from the West Hill neighborhood to downtown through a public park.\n\nHistorical research of the site and a planting design was developed in collaboration with Progress Through Preservation Akron and was awarded a lease agreement for restoration from the City of Akron. The project was also a featured project for MKSK's Community Impact Studio.\n\nFundraising efforts for restoration and replanting will begin March 2026.",
         images: [
             "/images/projects/glendale steps.webp",
-            "/images/projects/placeholder.webp",
-            "/images/projects/placeholder.webp",
-            "/images/projects/placeholder.webp",
+            "/images/projects/glendale-steps-sitemap.webp",
         ],
         year: 2024,
         location: "Akron, OH",
@@ -88,8 +83,14 @@ export const projects: Project[] = [
         description:
             "More than one plan in Akron's past has tried to connect the canals in Akron's downtown surrounded by trees and ravines with a park to the surrounding neighborhoods.\n\nDuring the era of urban renewal, a highway paired with a park, plaza, and shopping mall was promoted as the promotional image for downtown redevelopment. In the mid 1960s, the city brought in landscape architect Lawrence Halprin to draft a plan. Halprin proposed a design that aimed to minimize disruption to residential and commercial areas by circumventing the plan around a neighborhood and capping the new expressway with open space. His vision imagined a sunken expressway built beneath a civic park and sought to preserve some pedestrian access and greenspace while reconnecting downtown to the canal by integrating it into new public space.\n\nAfter decades of demolition, however, the final built condition diverged dramatically from this vision. The highway infrastructure was only partially completed, and terminates abruptly at the edge of downtown, while the envisioned civic plaza was never realized as intended. Rather than a lively public realm and cohesive superblock, the site today is defined by a federal office building, a central lawn, and surrounding buildings and parking lots that have long struggled with occupancy and activation.\n\nYears earlier, in 1936, the renowned American landscape architect Warren Manning was involved in the initial design of a park that sits directly across the highway from Cascade Plaza, at the foot of the historic Glendale Steps. He worked with Gertrude Seiberling and the Akron City Women's Club on the project in their hopes that it would be a \"beauty spot\" in which to view downtown.\n\nCascade Plaza occupies the former convergence of movement, commerce, and water, marking a shift from incremental urban growth to large-scale clearance and redevelopment.",
         images: [
-            "/images/projects/placeholder.webp",
-            "/images/projects/placeholder.webp",
+            "/images/projects/cascade-plaza-canal-axo.webp",
+            "/images/projects/cascade-plaza-i59-farm-section.webp",
+            "/images/projects/cascade-plaza-colored-site-plan.webp",
+            "/images/projects/cascade-plaza-site-map.webp",
+            "/images/projects/cascade-plaza-new-infrastructures.webp",
+            "/images/projects/cascade-plaza-site-plan.webp",
+            "/images/projects/cascade-plaza-site-map-zoomed.webp",
+            "/images/projects/cascade-plaza-site-map-2.webp",
         ],
         year: 2019,
         location: "Akron, OH",
