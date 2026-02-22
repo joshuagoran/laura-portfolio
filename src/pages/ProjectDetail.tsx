@@ -1,4 +1,6 @@
+import { useRef } from "react";
 import { Link, useParams } from "react-router-dom";
+import type { ImageGalleryHandle } from "../components/ImageGallery";
 import ImageGallery from "../components/ImageGallery";
 import LazyImage from "../components/LazyImage";
 import Reveal from "../components/Reveal";
@@ -8,20 +10,23 @@ import styles from "../styles/ProjectDetail.module.css";
 export default function ProjectDetail() {
     const { slug } = useParams<{ slug: string }>();
     const project = projects.find((p) => p.slug === slug);
+    const galleryRef = useRef<ImageGalleryHandle>(null);
 
     if (!project) return <p className="section">Project not found.</p>;
 
-    const [heroImage, ...restImages] = project.images;
-
     return (
         <article className={styles.article}>
-            <div className={styles.heroWrap}>
+            <button
+                type="button"
+                className={styles.heroWrap}
+                onClick={() => galleryRef.current?.openLightbox(0)}
+            >
                 <LazyImage
-                    src={heroImage}
+                    src={project.images[0]}
                     alt={project.title}
                     className={styles.heroImage}
                 />
-            </div>
+            </button>
 
             <div className={styles.content}>
                 <Link to="/projects" className={styles.backLink}>
@@ -84,11 +89,12 @@ export default function ProjectDetail() {
                     </Reveal>
                 )}
 
-                {restImages.length > 0 && (
-                    <Reveal>
-                        <ImageGallery images={restImages} layout="grid" />
-                    </Reveal>
-                )}
+                <ImageGallery
+                    ref={galleryRef}
+                    images={project.images}
+                    layout="grid"
+                    skipThumbnails={1}
+                />
 
                 {project.collaborators && project.collaborators.length > 0 && (
                     <Reveal>

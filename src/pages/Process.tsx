@@ -15,6 +15,7 @@ const images = [
     "/images/process/IMG_5077.webp",
     "/images/process/IMG_5118.webp",
     "/images/process/glendale sketch.webp",
+    "/images/process/avon-parkway-plan.webp",
 ];
 
 export default function Process() {

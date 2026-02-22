@@ -40,7 +40,7 @@
     padding: 0;
     border: none;
     background: none;
-    cursor: pointer;
+    cursor: zoom-in;
     margin-bottom: var(--space-xs);
     break-inside: avoid;
     overflow: hidden;
