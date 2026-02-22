@@ -104,6 +104,26 @@ export const projects: Project[] = [
         category: "Research / Concept",
     },
     {
+        slug: "tulip-poplar-residence",
+        title: "Tulip Poplar Residence",
+        summary:
+            "Residential planting design for a hillside property in Asheville, from site analysis through installation.",
+        description: "",
+        images: [
+            "/images/projects/tulip-poplar-plan.webp",
+            "/images/projects/tulip-poplar-install-photo.webp",
+            "/images/projects/tulip-poplar-sketch.webp",
+            "/images/projects/tulip-poplar-horseshoe.webp",
+            "/images/projects/tulip-poplar-site-circulation.webp",
+            "/images/projects/tulip-poplar-site-diagram-planting.webp",
+            "/images/projects/tulip-poplar-site-diagram-topo.webp",
+        ],
+        year: 2020,
+        location: "Asheville, NC",
+        featured: true,
+        category: "Residential",
+    },
+    {
         slug: "brave-earth",
         title: "Brave Earth Retreat Center",
         summary:
@@ -132,25 +152,5 @@ export const projects: Project[] = [
         ],
         location: "Asheville, NC / Brooklyn, NY",
         category: "Urban Agriculture",
-    },
-    {
-        slug: "tulip-poplar-residence",
-        title: "Tulip Poplar Residence",
-        summary:
-            "Residential planting design for a hillside property in Asheville, from site analysis through installation.",
-        description: "",
-        images: [
-            "/images/projects/tulip-poplar-plan.webp",
-            "/images/projects/tulip-poplar-install-photo.webp",
-            "/images/projects/tulip-poplar-sketch.webp",
-            "/images/projects/tulip-poplar-horseshoe.webp",
-            "/images/projects/tulip-poplar-site-circulation.webp",
-            "/images/projects/tulip-poplar-site-diagram-planting.webp",
-            "/images/projects/tulip-poplar-site-diagram-topo.webp",
-        ],
-        year: 2020,
-        location: "Asheville, NC",
-        featured: true,
-        category: "Residential",
     },
 ];
