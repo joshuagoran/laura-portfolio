@@ -5,7 +5,7 @@ import styles from "../styles/Services.module.css";
 export default function Services() {
     return (
         <section className="section">
-            <Reveal>
+            {/* <Reveal>
                 <h1 className={styles.title}>How I Work</h1>
                 <p className={styles.intro}>
                     Every project starts with a conversation about your site,
@@ -13,7 +13,7 @@ export default function Services() {
                     like. From there, I develop a design rooted in your specific
                     conditions.
                 </p>
-            </Reveal>
+            </Reveal> */}
 
             <div className={styles.services}>
                 <Reveal>
