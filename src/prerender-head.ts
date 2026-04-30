@@ -13,7 +13,24 @@ type Head = {
 const DEFAULT_DESCRIPTION =
     "Thoughtful landscape design rooted in place, ecology, and how people actually use their outdoor spaces. Based in Akron, OH.";
 
-const pageMeta: Record<string, { title: string; description: string }> = {
+type PageMeta = {
+    title: string;
+    description: string;
+    /** Optional OG/Twitter share image. Defaults to /images/hero.webp. */
+    ogImage?: string;
+    /**
+     * Optional favicon override. When set, these `<link>` tags are appended
+     * to the prerendered head and take precedence over the defaults in
+     * index.html (browsers use the last matching icon link). The studio's
+     * `/favicon.ico` in index.html serves as the legacy fallback.
+     */
+    favicon?: {
+        png32: string;
+        appleTouch: string;
+    };
+};
+
+const pageMeta: Record<string, PageMeta> = {
     "/": {
         title: "Laura Noël | Landscape Studio",
         description: DEFAULT_DESCRIPTION,
@@ -43,10 +60,25 @@ const pageMeta: Record<string, { title: string; description: string }> = {
         description:
             "Get in touch about your landscape design project. Based in Akron, OH.",
     },
+    "/firestone": {
+        title: "Save Firestone Plant 1 | Akron, Ohio",
+        description:
+            "A campaign for cultural landscape designation and adaptive reuse of Firestone Plant 1 in Akron, Ohio. Sign the petition and stay updated.",
+        ogImage:
+            "/images/projects/firestone-plant-1/firestone-plant-1-clocktower-bw.webp",
+        favicon: {
+            png32: "/firestone-favicon-32.png",
+            appleTouch: "/firestone-apple-touch-icon.png",
+        },
+    },
 };
 
 function meta(props: Record<string, string>): HeadElement {
     return { type: "meta", props };
+}
+
+function link(props: Record<string, string>): HeadElement {
+    return { type: "link", props };
 }
 
 function ogElements(
@@ -80,12 +112,31 @@ export function getHeadForRoute(url: string): Head {
     }
 
     const pageMeta_ = pageMeta[url] ?? pageMeta["/"];
+    const elements = ogElements(
+        pageMeta_.title,
+        pageMeta_.description,
+        pageMeta_.ogImage ?? "/images/hero.webp",
+    );
+
+    if (pageMeta_.favicon) {
+        elements.add(
+            link({
+                rel: "icon",
+                type: "image/png",
+                sizes: "32x32",
+                href: pageMeta_.favicon.png32,
+            }),
+        );
+        elements.add(
+            link({
+                rel: "apple-touch-icon",
+                href: pageMeta_.favicon.appleTouch,
+            }),
+        );
+    }
+
     return {
         title: pageMeta_.title,
-        elements: ogElements(
-            pageMeta_.title,
-            pageMeta_.description,
-            "/images/hero.webp",
-        ),
+        elements,
     };
 }

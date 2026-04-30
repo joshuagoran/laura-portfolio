@@ -93,6 +93,9 @@ export default function Navbar() {
         .filter(Boolean)
         .join(" ");
 
+    // Standalone landing pages render without site chrome.
+    if (pathname === "/firestone") return null;
+
     return (
         <nav className={navClass}>
             <div className={styles.bar}>

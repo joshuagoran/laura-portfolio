@@ -1,6 +1,12 @@
+import { useLocation } from "react-router-dom";
 import styles from "../styles/Footer.module.css";
 
 export default function Footer() {
+    const { pathname } = useLocation();
+
+    // Standalone landing pages render without site chrome.
+    if (pathname === "/firestone") return null;
+
     return (
         <footer className={styles.footer}>
             <p className={styles.location}>Northeast Ohio & New York City</p>
