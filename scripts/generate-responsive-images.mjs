@@ -50,7 +50,9 @@ async function optimize() {
             // Optimized is larger — copy original as-is
             await sharp(filePath).toFile(outPath);
             const afterSize = (await stat(outPath)).size;
-            console.log(`  copy  ${rel} (${fmt(before)}, optimized was larger)`);
+            console.log(
+                `  copy  ${rel} (${fmt(before)}, optimized was larger)`,
+            );
             totalBefore += before;
             totalAfter += afterSize;
             continue;

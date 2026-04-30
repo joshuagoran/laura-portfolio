@@ -8,6 +8,7 @@ export default defineConfig({
         react(),
         vitePrerenderPlugin({
             renderTarget: "#root",
+            additionalPrerenderRoutes: ["/firestone", "/firestone/vision"],
         }),
         {
             name: "close-bundle-exit",

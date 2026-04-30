@@ -3,6 +3,8 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Firestone from "./pages/Firestone";
+import FirestoneVision from "./pages/FirestoneVision";
 import Home from "./pages/Home";
 import Process from "./pages/Process";
 import ProjectDetail from "./pages/ProjectDetail";
@@ -22,6 +24,11 @@ export default function AppPrerender() {
                     <Route path="/services" element={<Services />} />
                     <Route path="/process" element={<Process />} />
                     <Route path="/contact" element={<Contact />} />
+                    <Route path="/firestone" element={<Firestone />} />
+                    <Route
+                        path="/firestone/vision"
+                        element={<FirestoneVision />}
+                    />
                 </Routes>
             </main>
             <Footer />
