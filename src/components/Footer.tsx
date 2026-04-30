@@ -5,7 +5,8 @@ export default function Footer() {
     const { pathname } = useLocation();
 
     // Standalone landing pages render without site chrome.
-    if (pathname === "/firestone") return null;
+    if (pathname === "/firestone" || pathname.startsWith("/firestone/"))
+        return null;
 
     return (
         <footer className={styles.footer}>

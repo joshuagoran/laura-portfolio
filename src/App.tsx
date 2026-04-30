@@ -14,6 +14,7 @@ const Services = lazy(() => import("./pages/Services"));
 const Process = lazy(() => import("./pages/Process"));
 const Contact = lazy(() => import("./pages/Contact"));
 const Firestone = lazy(() => import("./pages/Firestone"));
+const FirestoneVision = lazy(() => import("./pages/FirestoneVision"));
 
 export default function App() {
     return (
@@ -34,6 +35,10 @@ export default function App() {
                         <Route path="/process" element={<Process />} />
                         <Route path="/contact" element={<Contact />} />
                         <Route path="/firestone" element={<Firestone />} />
+                        <Route
+                            path="/firestone/vision"
+                            element={<FirestoneVision />}
+                        />
                     </Routes>
                 </Suspense>
             </main>

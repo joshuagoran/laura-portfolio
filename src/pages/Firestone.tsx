@@ -1,6 +1,7 @@
-import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import LazyImage from "../components/LazyImage";
 import Reveal from "../components/Reveal";
+import { useFirestoneBranding } from "../hooks/useFirestoneBranding";
 import styles from "../styles/Firestone.module.css";
 
 const PETITION_URL =
@@ -8,34 +9,27 @@ const PETITION_URL =
 
 const TITLE = "Save Firestone Plant 1 | Akron, Ohio";
 
+const ASKS = [
+    {
+        title: "Pause demolition",
+        body: "Allow time for a comprehensive, independent evaluation before irreversible action is taken.",
+    },
+    {
+        title: "Transparency in cost estimates",
+        body: "Conduct and share an independent feasibility study that evaluates building conditions with preservation as a goal, a full range of environmental remediation options, and phased adaptive reuse scenarios — not just full demolition.",
+    },
+    {
+        title: "Support environmental remediation",
+        body: "Invest in cleanup strategies that reduce long-term contamination, rather than relying solely on capping, which limits future use.",
+    },
+    {
+        title: "Meaningful community input",
+        body: "Engage the public early, before decisions are finalized, and clearly show how input is gathered and used.",
+    },
+];
+
 export default function Firestone() {
-    // Prerender sets <title> and favicon links in the prod HTML, but in dev
-    // (and on SPA navigation) we need to update them at runtime. We remove
-    // the studio's favicon links and add the firestone ones — browsers cache
-    // favicons aggressively and won't always re-evaluate when a new link is
-    // appended alongside the original.
-    useEffect(() => {
-        document.title = TITLE;
-
-        const head = document.head;
-        head.querySelectorAll(
-            'link[rel="icon"], link[rel="apple-touch-icon"]',
-        ).forEach((el) => {
-            el.remove();
-        });
-
-        const icon = document.createElement("link");
-        icon.rel = "icon";
-        icon.type = "image/png";
-        icon.setAttribute("sizes", "32x32");
-        icon.href = "/firestone-favicon-32.png";
-        head.appendChild(icon);
-
-        const apple = document.createElement("link");
-        apple.rel = "apple-touch-icon";
-        apple.href = "/firestone-apple-touch-icon.png";
-        head.appendChild(apple);
-    }, []);
+    useFirestoneBranding(TITLE);
 
     return (
         <article className={styles.page}>
@@ -55,9 +49,9 @@ export default function Firestone() {
                     </Reveal>
                     <Reveal>
                         <p className={styles.tagline}>
-                            A campaign for cultural landscape designation and
-                            adaptive reuse of one of Akron's last legacy
-                            industrial sites.
+                            Akron is fast-tracking demolition without seriously
+                            evaluating alternatives. We're calling for a pause —
+                            and a more responsible path forward.
                         </p>
                     </Reveal>
                     <Reveal>
@@ -83,24 +77,28 @@ export default function Firestone() {
 
             <section className={styles.section}>
                 <Reveal>
-                    <h2 className={styles.sectionTitle}>What's at stake</h2>
+                    <h2 className={styles.sectionTitle}>
+                        Demolition shouldn't be the default.
+                    </h2>
                 </Reveal>
                 <Reveal>
                     <p className={styles.body}>
-                        Firestone Plant 1 is a legacy industrial site in Akron,
-                        Ohio facing potential demolition. Behind the question of
-                        whether the building stands or falls is a larger one:
-                        how do post-industrial cities manage their legacy
-                        assets, and what gets lost when the answer defaults to
-                        demolition?
+                        The current proposal would demolish the majority of
+                        Firestone Plant 1 while salvaging fragments of the clock
+                        tower. But a building's meaning lives in its full
+                        context — not in pieces. Removing and reconstructing
+                        elements breaks the authenticity of the structure and
+                        reduces a historic landmark to a symbol.
                     </p>
                 </Reveal>
                 <Reveal>
                     <p className={styles.body}>
-                        A multi-disciplinary group of preservation
-                        professionals, architects, planners, and community
-                        stakeholders has been examining the future of the site.
-                        This page collects ways to support that effort.
+                        Demolition has been treated as the default outcome,
+                        rather than one option among many. Key decisions are
+                        being made using limited or disputed feasibility data,
+                        and opportunities for adaptive reuse, phased
+                        remediation, and historic preservation have not been
+                        fully explored.
                     </p>
                 </Reveal>
             </section>
@@ -108,29 +106,46 @@ export default function Firestone() {
             <section className={styles.sectionAlt}>
                 <div className={styles.sectionInner}>
                     <Reveal>
-                        <h2 className={styles.sectionTitle}>Why it matters</h2>
+                        <h2 className={styles.sectionTitle}>
+                            What we're asking for
+                        </h2>
                     </Reveal>
                     <Reveal>
                         <p className={styles.body}>
-                            The discussion around Firestone has highlighted the
-                            importance of distinguishing between structural
-                            feasibility and policy direction. How do municipal
-                            systems handle complex historic properties when they
-                            become difficult? What metrics and framing are being
-                            used to justify demolition? Where can existing
-                            policies be updated to favor adaptive reuse just as
-                            equally?
+                            We're asking the City of Akron to take a more
+                            responsible, transparent, and collaborative
+                            approach.
                         </p>
                     </Reveal>
-                    <Reveal>
-                        <p className={styles.body}>
-                            Cultural landscape designation would offer a
-                            framework for evaluating Firestone Plant 1 not just
-                            as a structure, but as part of the broader civic and
-                            ecological history of Akron.
-                        </p>
-                    </Reveal>
+                    <ol className={styles.asks}>
+                        {ASKS.map((ask, i) => (
+                            <Reveal key={ask.title}>
+                                <li className={styles.askItem}>
+                                    <span className={styles.askNumber}>
+                                        {String(i + 1).padStart(2, "0")}
+                                    </span>
+                                    <div>
+                                        <h3 className={styles.askTitle}>
+                                            {ask.title}
+                                        </h3>
+                                        <p className={styles.askBody}>
+                                            {ask.body}
+                                        </p>
+                                    </div>
+                                </li>
+                            </Reveal>
+                        ))}
+                    </ol>
                 </div>
+            </section>
+
+            <section className={styles.quoteSection}>
+                <Reveal>
+                    <blockquote className={styles.pullQuote}>
+                        Preservation is not about saving pieces — it's about
+                        sustaining place.
+                    </blockquote>
+                </Reveal>
             </section>
 
             <section className={styles.section}>
@@ -140,7 +155,7 @@ export default function Firestone() {
                 <Reveal>
                     <p className={styles.body}>
                         The petition asks city decision-makers to pause
-                        demolition and pursue adaptive reuse pathways. Adding
+                        demolition and pursue a more responsible path. Adding
                         your name is the fastest way to signal public support.
                     </p>
                 </Reveal>
@@ -179,6 +194,14 @@ export default function Firestone() {
                         </div>
                     </Reveal>
                 </div>
+            </section>
+
+            <section className={styles.moreSection}>
+                <Reveal>
+                    <Link to="/firestone/vision" className={styles.moreLink}>
+                        A vision for the site →
+                    </Link>
+                </Reveal>
             </section>
         </article>
     );

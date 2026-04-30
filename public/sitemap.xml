@@ -29,6 +29,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://noellandscapestudio.com/firestone/vision</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://noellandscapestudio.com/projects/firestone-plant-1</loc>
     <priority>0.7</priority>
   </url>

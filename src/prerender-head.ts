@@ -71,6 +71,17 @@ const pageMeta: Record<string, PageMeta> = {
             appleTouch: "/firestone-apple-touch-icon.png",
         },
     },
+    "/firestone/vision": {
+        title: "Civic Ecology Lab | Save Firestone Plant 1",
+        description:
+            "A vision for Firestone Plant 1 as a temporary, collaborative platform for ecology, design, and culture in Akron, Ohio.",
+        ogImage:
+            "/images/projects/firestone-plant-1/firestone-plant-1-clocktower-bw.webp",
+        favicon: {
+            png32: "/firestone-favicon-32.png",
+            appleTouch: "/firestone-apple-touch-icon.png",
+        },
+    },
 };
 
 function meta(props: Record<string, string>): HeadElement {
